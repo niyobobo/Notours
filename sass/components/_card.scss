@@ -1,0 +1,65 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  position: relative;
+
+  &__side {
+    color: white;
+    height: 50rem;
+    font-size: 3rem;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.15);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+
+    &--front {
+      background-color: red;
+    }
+
+    &--back {
+      transform: rotateY(0.5turn);
+      -webkit-transform: rotateY(0.5turn);
+      -moz-transform: rotateY(0.5turn);
+      -ms-transform: rotateY(0.5turn);
+      -o-transform: rotateY(0.5turn);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(0.5turn);
+    -webkit-transform: rotateY(0.5turn);
+    -moz-transform: rotateY(0.5turn);
+    -ms-transform: rotateY(0.5turn);
+    -o-transform: rotateY(0.5turn);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    -o-transform: rotateY(0);
+  }
+}
